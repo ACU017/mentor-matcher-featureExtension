@@ -16,6 +16,7 @@ export default function TextAreaInput(props) {
       </div>
       <div className="char-count">
         <p className={{ value }.length === 500 ? "warning" : ""}>
+          {/*this checks the lenght of the input, however it shows at the bottom  */}
           {value.length}/500
           {value.length === 500 && (
             <span className="warning">
