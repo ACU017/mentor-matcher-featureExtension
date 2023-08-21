@@ -5,7 +5,7 @@ function MentorsList() {
 
   const getMentors = async () => {
     try {
-      const mentors = await fetch(`/api/mentorss`);
+      const mentors = await fetch(`/api/mentors`);
       const result = await mentors.json();
       SetMentorsList(result);
     } catch (error) {
@@ -15,7 +15,6 @@ function MentorsList() {
 
   useEffect(() => {
     getMentors();
-    console.log("second mentors list ", menteeList);
   }, []);
 
   return (
