@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import SortingHat from "../assets/sorting-hat.png";
 import CircularProgress from "@mui/material/CircularProgress";
+import Authcheck from "../components/Authcheck";
+
+// import MenteesList from "../components/MenteesList";
+// import MentorsList from "../components/MentorsList";
 
 export default function Admin() {
   const [data, setData] = useState({
@@ -164,6 +168,19 @@ export default function Admin() {
           </section>
         </>
       )}
+
+      <Authcheck />
+
+      {/* 
+      
+      mentors and mmentees lists 
+      <h3 class="title is-3">Mentees : </h3>
+
+      <MenteesList />
+
+      <h3 class="title is-3">Mentors : </h3>
+
+      <MentorsList /> */}
     </div>
   );
 }

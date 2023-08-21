@@ -8,6 +8,7 @@ var indexRouter = require("./routes/index");
 var menteesRouter = require("./routes/mentees");
 var mentorsRouter = require("./routes/mentors");
 var matchRouter = require("./routes/match");
+var loginRouter = require("./routes/login");
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use("/api", indexRouter);
 app.use("/api/mentees", menteesRouter);
 app.use("/api/mentors", mentorsRouter);
 app.use("/api/matches", matchRouter);
+app.use("/api/login", loginRouter);
 
 module.exports = app;

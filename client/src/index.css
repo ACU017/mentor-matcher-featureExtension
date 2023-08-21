@@ -7,3 +7,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.descriptionContainer h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.authcheck {
+  padding: 30px;
+}
