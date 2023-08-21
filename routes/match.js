@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_API_KEY,
 });
-
+// const isUserloggedIn = require("..guards/authFunction");
 const openai = new OpenAIApi(configuration);
 
 // get all matches
