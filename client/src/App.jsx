@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar.jsx";
 import Mentor from "./pages/Mentor";
 import Mentee from "./pages/Mentee";
 import Admin from "./pages/Admin";
-import Test from "./pages/Test";
+import Index from "./pages/Index";
+
 // import MenteesList from "./components/MenteesList";
 import { Routes, Route } from "react-router-dom";
 
@@ -15,7 +16,7 @@ function App() {
         <Navbar />
 
         <Routes>
-          {/* <Route path="/" element={<MenteesList />} /> */}
+          <Route path="/" element={<Index />} />
           <Route path="/mentor" element={<Mentor />} />
           <Route path="/mentee" element={<Mentee />} />
           <Route path="/admin" element={<Admin />} />

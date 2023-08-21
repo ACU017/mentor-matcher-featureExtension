@@ -48,7 +48,7 @@ router.get("/", async function (req, res, next) {
         .status(404)
         .send({ msg: "There is no data available. Please add more data." });
     } else {
-      res.send(combinedResults);
+      res.send(combinedResults); // this is the results
     }
   } catch (err) {
     console.error(err);
@@ -90,7 +90,7 @@ router.post("/", async function (req, res, next) {
 
     console.log(`match results: ${matchResults}`);
 
-    console.log("deleting previous matches");
+    console.log("deleting previous matches"); // this is what I want to delete
 
     // insert match results into database mentor_mentee table
 
