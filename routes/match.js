@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_API_KEY,
 });
-// const isUserloggedIn = require("..guards/authFunction");
+const userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 const openai = new OpenAIApi(configuration);
 
 // get all matches
@@ -68,7 +68,7 @@ router.delete("/clear-matches", async function (req, res, next) {
 });
 
 // Send all mentor and mentee questionnaire responses to chatgpt to generate matches
-router.post("/", async function (req, res, next) {
+router.post("/", userShouldBeLoggedIn, async function (req, res, next) {
   try {
     // First, delete previous matches from the database
     // await db("DELETE FROM mentor_mentee;");

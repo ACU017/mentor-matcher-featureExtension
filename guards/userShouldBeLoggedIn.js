@@ -3,7 +3,7 @@ require("dotenv").config();
 const supersecret = process.env.SUPER_SECRET;
 
 // check if the user is logged in
-function isUserloggedIn(req, res, next) {
+function userShouldBeLoggedIn(req, res, next) {
   // check the if there's a token
   const token = req.headers["authorization"].replace(/^Bearer\s/, "");
 
@@ -25,4 +25,4 @@ function isUserloggedIn(req, res, next) {
   }
 }
 
-module.exports = isUserloggedIn;
+module.exports = userShouldBeLoggedIn;

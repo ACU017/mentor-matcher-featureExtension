@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var jwt = require("jsonwebtoken");
-// const userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
+const userShouldBeLoggedIn = require("../guards/userShouldBeLoggedIn");
 var db = require("../model/helper");
 require("dotenv").config();
 var bcrypt = require("bcrypt");
@@ -57,10 +57,10 @@ router.post("/auth", async (req, res) => {
   }
 });
 
-// router.get("/profile", userShouldBeLoggedIn, (req, res) => {
-//   res.send({
-//     message: "Here is the PROTECTED data for user " + req.user_id,
-//   });
-// });
+router.get("/profile", userShouldBeLoggedIn, (req, res) => {
+  res.send({
+    message: "Here is the PROTECTED data for user " + req.user_id,
+  });
+});
 
 module.exports = router;

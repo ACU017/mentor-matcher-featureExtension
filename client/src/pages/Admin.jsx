@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import SortingHat from "../assets/sorting-hat.png";
 import CircularProgress from "@mui/material/CircularProgress";
-import Authcheck from "../components/Authcheck";
+import Loginform from "../components/Loginform";
 
 // import MenteesList from "../components/MenteesList";
 // import MentorsList from "../components/MentorsList";
@@ -169,7 +169,7 @@ export default function Admin() {
         </>
       )}
 
-      <Authcheck />
+      <Loginform />
 
       {/* 
       
