@@ -15,19 +15,19 @@ export default function Admin() {
   const [hasClickedHat, setHasClickedHat] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/matches")
-      .then((res) => res.json())
-      .then((fetchedData) => {
-        // Check if the new data is different from the previous data
-        if (
-          JSON.stringify(prevDataRef.current) !== JSON.stringify(fetchedData)
-        ) {
-          setData(fetchedData);
-          prevDataRef.current = fetchedData;
-        }
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/matches")
+  //     .then((res) => res.json())
+  //     .then((fetchedData) => {
+  //       // Check if the new data is different from the previous data
+  //       if (
+  //         JSON.stringify(prevDataRef.current) !== JSON.stringify(fetchedData)
+  //       ) {
+  //         setData(fetchedData);
+  //         prevDataRef.current = fetchedData;
+  //       }
+  //     });
+  // }, []);
 
   const handleImageClick = async () => {
     setIsLoading(true);
