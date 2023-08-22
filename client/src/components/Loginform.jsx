@@ -1,7 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Matches from "../components/Matches";
 
 function Login() {
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: "test",
     password: "test",
@@ -31,6 +34,7 @@ function Login() {
       console.log(data.message, data.token);
       // what is data
       setData(data.message);
+      navigate("/matches");
     } catch (error) {
       console.log(error);
       setData(error.message);
@@ -84,11 +88,11 @@ function Login() {
           </button>
         </div>
       </div>
-      <div className="text-center p-4">
+      {/* <div className="text-center p-4">
         <button className=" btn btn-outline-primary" onClick={requestData}>
           Request protected data
         </button>
-      </div>
+      </div> */}
 
       {data && (
         <div className="text-center p-4">
