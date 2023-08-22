@@ -5,9 +5,9 @@ import Mentor from "./pages/Mentor";
 import Mentee from "./pages/Mentee";
 import Admin from "./pages/Admin";
 import Index from "./pages/Index";
-
 // import MenteesList from "./components/MenteesList";
 import { Routes, Route } from "react-router-dom";
+import Matches from "./components/Matches";
 
 function App() {
   return (
@@ -20,6 +20,8 @@ function App() {
           <Route path="/mentor" element={<Mentor />} />
           <Route path="/mentee" element={<Mentee />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="admin/mentors" element={<Matches />} />
         </Routes>
 
         {/* <MenteesList /> */}
