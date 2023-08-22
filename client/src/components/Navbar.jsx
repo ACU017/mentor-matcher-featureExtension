@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import codeopLogo from "../assets/codeop-logo.jpeg";
 
 function Navbar() {
+  // token
+  const token = localStorage.getItem("token");
   // adding the states
   const [isActive, setIsActive] = useState(false);
 
@@ -36,9 +38,11 @@ function Navbar() {
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ""}`}>
             <li onClick={removeActive}>
-              <Link to="/admin" className={`${styles.navLink}`}>
-                Admin
-              </Link>
+              {token ? (
+                <Link to="/matches">Admin</Link>
+              ) : (
+                <Link to="/admin">Log in </Link>
+              )}
             </li>
             <li onClick={removeActive}>
               <Link to="/mentee" className={`${styles.navLink}`}>

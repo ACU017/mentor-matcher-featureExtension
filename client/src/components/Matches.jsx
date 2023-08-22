@@ -4,6 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 import MenteesList from "../components/MenteesList";
 import MentorsList from "../components/MentorsList";
+import { Link } from "react-router-dom";
 
 export default function Matches() {
   const [data, setData] = useState({
@@ -37,6 +38,7 @@ export default function Matches() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          authorization: "Bearer " + localStorage.getItem("token"),
         },
         body: JSON.stringify({}),
       });
@@ -90,11 +92,13 @@ export default function Matches() {
   return (
     <div className="container">
       <div>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item">Mentors</a>
-            <a class="navbar-item">Mentees</a>
-            <a class="navbar-item">Matches</a>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <Link to="/admin/mentors" className="navbar-item">
+              Mentors
+            </Link>
+            <a className="navbar-item">Mentees</a>
+            <a className="navbar-item">Matches</a>
           </div>
         </nav>
       </div>
@@ -180,11 +184,11 @@ export default function Matches() {
       {/* 
       
       mentors and mmentees lists 
-      <h3 class="title is-3">Mentees : </h3>
+      <h3 className="title is-3">Mentees : </h3>
 
       <MenteesList />
 
-      <h3 class="title is-3">Mentors : </h3>
+      <h3 className="title is-3">Mentors : </h3>
 
       <MentorsList /> */}
     </div>

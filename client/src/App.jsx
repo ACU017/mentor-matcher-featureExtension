@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 // import MenteesList from "./components/MenteesList";
 import { Routes, Route } from "react-router-dom";
 import Matches from "./components/Matches";
+import MentorsList from "./components/MentorsList";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/mentee" element={<Mentee />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/matches" element={<Matches />} />
-          <Route path="admin/mentors" element={<Matches />} />
+          <Route path="/admin/mentors" element={<MentorsList />} />
         </Routes>
 
         {/* <MenteesList /> */}
